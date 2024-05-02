@@ -6,31 +6,34 @@ npm install npm@latest -g
 ```
 git clone https:github.com/Simplelamer8/Event_management_website.git
 ```
-3) move to parser folder
-```
-cd parser
-```
-4) install all dependencies for backend
-```
-npm install 
-```
-6) move back to upper directory
-```
-cd ..
-```
-6) move to site folder
+3) move to "site" folder
 ```
 cd site
 ```
-7) install all dependencies for Frontend
+4) install all dependencies for Frontend
 ```
 npm install 
 ```
-9) now move back to parser folder and run:
+5) move back to upper directory
 ```
+cd ..
+```
+6) move to "parser" folder
+```
+cd parser
+```
+7) install all dependencies for Backend & start the server
+```
+npm install 
 node index.js
 ```
-10) move to site folder and run:
+8) open the new console tab by clicking plus icon (VScode) or Ctrl + Shift + tilda mark (~)
+9) now move back to site folder
+```
+cd ..
+cd site
+```
+10) and Run
 ```
 npm run dev
 ```
