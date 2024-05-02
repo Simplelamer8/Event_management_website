@@ -1,0 +1,75 @@
+.background 
+{
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card
+{
+    text-align: center;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.closeWindow 
+{
+    background-color: gray;
+    position: absolute;
+    right: 5em;
+    top: 5em;
+}
+.background img
+{
+    width: 40vw;
+}
+.descriptionList 
+{
+    margin-left: 4rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.descriptionList li 
+{
+    margin-bottom: 2rem;
+}
+.form 
+{
+    display: flex;
+    align-items: center;
+}
+.form input 
+{
+    height: 2rem;
+}
+.form button 
+{
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.5s ease-in-out;
+}
+.form button:hover
+{
+    background-color: green;
+    color: white;
+}
+.middlePart
+{
+    margin: 5rem 0;
+    display: flex;
+    align-items: center;
+}
