@@ -1,14 +1,19 @@
 .card 
 {
-    text-align: center;
+    width: 85%;
     margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 .card h3:hover
 {
     cursor: pointer;
+}
+.card img 
+{
+    max-width: 100%;
 }
 .card img:hover
 {
