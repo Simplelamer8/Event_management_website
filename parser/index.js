@@ -77,7 +77,8 @@ const initializeBrowser = async () =>
     browser = await puppeteer.launch
     ({
         headless: true,
-        defaultViewport: null
+        defaultViewport: null,
+        args: ['--disable-features=site-per-process']
     });
     page = await browser.newPage();
 };
