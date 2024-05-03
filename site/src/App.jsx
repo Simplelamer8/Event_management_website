@@ -7,7 +7,7 @@ import Card from "./Card"
 import Header from './components/Header'
 import { addMonths, format } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
-import { CircularProgress } from '@mui/material'
+import { Box, CircularProgress, Skeleton, Stack } from '@mui/material'
 import ModalWindow from './ModalWindow'
 import { Link, Routes, Route, useNavigate } from 'react-router-dom'
 import Login from './components/Login'
@@ -49,7 +49,7 @@ function App() {
 
   const fetchData = async () => 
   {
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 5000));
     try 
     {
       const response = await axios.get("http://localhost:3000/scrape");
@@ -238,10 +238,10 @@ function App() {
   if (parsedData)
   {
     return (
-      <>
+      <div className={styles.app}>
         <Header options={options} options2={options2} selectedIndex={selectedIndex} selectedIndex2={selectedIndex2} setSelectedIndex={setSelectedIndex} setSelectedIndex2={setSelectedIndex2} inputValue={inputValue} handleInputChange={handleInputChange} sortBasedOnDates={sortBasedOnDates} fetchMoreData={() => fetchMoreData()} navigate={navigate}></Header>
         <div className={styles.cards}>
-        {cards}
+          {cards}
         </div>
         <Routes>
         {
@@ -250,13 +250,25 @@ function App() {
         }
           <Route exact path={'/login'} element={<Login navigate={navigate}></Login>} />
         </Routes>
-      </>
+      </div>
     )
   }
   else
   {
     return (
-      <CircularProgress />
+      <>
+        <CircularProgress/>
+        <div className={styles.cards}>
+          {
+            [1,2,3,4,5,6,7,8,9].map((elem) => 
+            <Stack sx={{marginRight: 6, marginLeft: 6, mb: 2, mt: 4}} spacing={1}>
+              <Skeleton variant='text' sx={{fontSize: '2rem'}}></Skeleton>
+              <Skeleton variant='rectangular' width={328} height={200}></Skeleton>
+            </Stack>
+          )
+          }
+        </div>
+      </>
     );
   }
 }
